@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "tele2"
+    }
+  },
+  "defaultProject": "tele2",
+  "cli": {
+    "analytics": "c6731ca5-ee6d-4554-bf25-002ef7d5cdbd"
+  }
 }
