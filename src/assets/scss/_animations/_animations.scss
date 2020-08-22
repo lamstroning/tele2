@@ -1,0 +1,13 @@
+@keyframes shine {
+  0% {
+    opacity: 0.1;
+    border-radius: 50% / 70px  108px 105px;
+  }
+  50% {
+    opacity: 0.4;
+    border-radius: 50% / 111px 70px  123px;
+  }
+  100% {
+    border-radius: 50% / 70px  108px 105px;
+  }
+}

@@ -1,0 +1,6 @@
+.notification {
+  &_error {
+    background-color: $color-red;
+    color: $color-white;
+  }
+}

@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./assets/scss/_variables/colors.scss";
+@import "./assets/scss/_notification/_notification.scss";
+@import "./assets/scss/_fonts/_fonts.scss";
+@import "./assets/scss/_animations/_animations.scss";
+@import "./assets/scss/_icnos/_icons.scss";
+@import "./assets/scss/_grid/_grid.scss";
+@import "./assets/scss/_chat/_chatElements.scss";
+@import "./assets/scss/_common/_common.scss";
+

@@ -1,0 +1,19 @@
+.icon {
+  position: absolute;
+  background-size: contain;
+
+  &_responce-size-half {
+    height: 50%;
+    width: 50%;
+  }
+
+  &_microphone {
+    background-image: url(/assets/img/icons/svg/microphone.svg);
+  }
+
+  &_stop {
+    background-color: white;
+    border-radius: 15px;
+  }
+}
+
