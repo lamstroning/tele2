@@ -14,10 +14,16 @@
     }
   }
 
+  &__messages {
+    padding-bottom: 30px;
+    overflow-y: auto;
+  }
+
   &__area {
     max-width: 1100px;
-    min-height: 100vh;
+    height: 100vh;
     margin: 0 auto;
+    position: relative;
     background-color: $color-white;
 
     &_between {
@@ -29,14 +35,7 @@
 }
 
 .chat-interface {
-  &__search-row {
-    width: 100%;
-    padding: 10px;
-    font-size: 20px;
-    border: none;
-    border-top: 1px solid;
-    box-sizing: border-box;
-  }
+  border-top:1px solid $color-lightgray2;
 }
 
 .message-helper {
@@ -53,12 +52,6 @@
 .voice-helper {
   margin-top: 50px;
   transition: 0.5s;
-  position: relative;
-  top:0;
-
-  &__title {
-    font-size: 20px;
-  }
 
   &__hint {
     font-size: 20px;
@@ -69,6 +62,7 @@
     width: 200px;
     height: 200px;
     z-index: 1;
+    transition: 0.2s;
     margin: 50px auto;
     cursor: pointer;
     position: relative;
@@ -107,17 +101,54 @@
   }
 
   &_active {
-    top: 390px;
 
     .voice-helper__radiance {
       width: 50px;
       height: 50px;
     }
   }
+
+  &_small {
+    position: absolute;
+    bottom: 15px;
+    right: 40px;
+
+    .voice-helper__radiance {
+      width: 50px;
+      height: 50px;
+      margin: 0;
+    }
+  }
 }
 
 .message-block {
+  padding: 10px 20px;
+  border: 1px solid $color-blue;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: $color-blue;
+    color: white;
+  }
+}
+
+.send-msg {
+  display: inline-block;
   padding: 20px;
-  border:1px solid red;
-  border-right: 20px;
+  background-color: $color-light;
+  transition: 0.2s;
+  animation: showMsd 1s;
+
+  &_direct-right {
+    margin-left: auto;
+    border-radius: 20px 0 0 20px;
+  }
+
+  &_direct-left {
+    margin-right: auto;
+    border-radius: 0 20px 20px 0;
+  }
 }

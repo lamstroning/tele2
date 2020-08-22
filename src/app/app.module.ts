@@ -8,8 +8,9 @@ import { ChatPageComponent } from './views/pages/chat-page/chat-page.component';
 import { VoiceHelperComponent } from './views/components/chat/voice-helper/voice-helper.component';
 import { NotificationComponent } from './views/components/notification/notification.component';
 import { MessageComponent } from './views/components/message/message.component';
-import { MessageHelperComponent } from './views/components/chat/message-helper/message-helper.component';
 import { MessageBlockComponent } from './views/components/chat/message-block/message-block.component';
+import { SendMsgComponent } from './views/components/chat/send-msg/send-msg.component';
+import { ShowTariffsComponent } from './views/components/chat/show-tariffs/show-tariffs.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +20,9 @@ import { MessageBlockComponent } from './views/components/chat/message-block/mes
     VoiceHelperComponent,
     NotificationComponent,
     MessageComponent,
-    MessageHelperComponent,
-    MessageBlockComponent
+    MessageBlockComponent,
+    SendMsgComponent,
+    ShowTariffsComponent
   ],
   imports: [
     BrowserModule,

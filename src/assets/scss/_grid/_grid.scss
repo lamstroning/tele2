@@ -7,6 +7,9 @@
     justify-content: center;
     align-items: center;
   }
+  &_scrolled {
+    overflow-x: auto;
+  }
 }
 
 .col {

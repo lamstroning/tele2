@@ -1,0 +1,9 @@
+<div class="row row_scrolled">
+  <div *ngFor="let tariff of tariffs" class="tariff">
+    <div class="tariff__name">{{tariff.name}}</div>
+    <div class="tariff__gb">{{tariff.gb}}Гб</div>
+    <div class="tariff__minutes">{{tariff.minutes}} Минут</div>
+    <div class="tariff__city">городские номера: {{tariff.cityNumbers ? 'Да' : 'Нет'}}</div>
+    <div class="tariff__cost">{{tariff.cost}}</div>
+  </div>
+</div>

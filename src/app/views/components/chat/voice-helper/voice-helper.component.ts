@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 
 @Component({
@@ -7,6 +7,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class VoiceHelperComponent implements OnInit {
   @Output() openChat = new EventEmitter();
+  @Input() small: boolean;
 
   error: string;
   voice = false;

@@ -9,3 +9,15 @@ body {
 input:focus {
   outline: none;
 }
+
+*::-webkit-scrollbar {
+  width: 5px;
+  background-color: $color-light;
+  border-radius: 5px;
+  height: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: $color-violet-dark;
+  border-radius: 5px;
+}

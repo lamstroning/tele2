@@ -16,3 +16,12 @@
     border-radius: 50% / 35% 50% 50% 50%;
   }
 }
+
+@keyframes showMsd {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
