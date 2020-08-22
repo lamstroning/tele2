@@ -8,6 +8,23 @@
     min-height: 100vh;
     margin: 0 auto;
     background-color: $color-white;
+
+    &_between {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+}
+
+.chat-interface {
+  &__search-row {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    border-top: 1px solid;
+    box-sizing: border-box;
   }
 }
 
