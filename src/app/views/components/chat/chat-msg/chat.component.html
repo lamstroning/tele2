@@ -1,8 +1,21 @@
 <div class="chat chat__area chat__area_between">
-  <div class="row row_center">
-    <app-voice-helper></app-voice-helper>
+  <div class="chat__header">
+    <h1 class="chat__header-title">Помощник Теле2</h1>
+  </div>
+  <div *ngIf="!chatType || chatType === 'voice'" class="row row_center">
+    <app-voice-helper (openChat)="openChat($event)"></app-voice-helper>
+  </div>
+  <div *ngIf="!chatType || chatType === 'message'" class="row row_center">
+    <app-message-helper (openChat)="openChat($event)"></app-message-helper>
+  </div>
+  <div class="chat chat__massages">
+
   </div>
   <div class="chat-interface">
-    <input class="chat-interface__search-row" placeholder="Введите текст..." type="text">
+    <div class="row row_center">
+      <div *ngFor="let text of textBlock" class="col">
+        <app-message-block [text]="text"></app-message-block>
+      </div>
+    </div>
   </div>
 </div>

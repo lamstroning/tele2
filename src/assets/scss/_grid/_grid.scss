@@ -1,9 +1,15 @@
 .row {
   display: flex;
   width: 100%;
+  margin-top: 20px;
 
   &_center {
     justify-content: center;
     align-items: center;
   }
+}
+
+.col {
+  padding: 0 15px;
+  margin: 0 15px;
 }

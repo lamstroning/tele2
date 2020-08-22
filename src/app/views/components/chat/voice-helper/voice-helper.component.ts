@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import {of} from 'rxjs';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+
 
 @Component({
   selector: 'app-voice-helper',
   templateUrl: './voice-helper.component.html'
 })
 export class VoiceHelperComponent implements OnInit {
+  @Output() openChat = new EventEmitter();
 
   error: string;
   voice = false;
@@ -17,6 +18,7 @@ export class VoiceHelperComponent implements OnInit {
 
   startRecord() {
     this.error = '';
+    this.openChat.emit('voice');
     this.voice = !this.voice;
     if (!this.voice) {
       return;
@@ -31,6 +33,7 @@ export class VoiceHelperComponent implements OnInit {
       this.error = 'Разрешите использование микрофона';
       this.voice = false;
     });
+
   }
 
   animation() {

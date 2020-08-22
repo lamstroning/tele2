@@ -1,10 +1,21 @@
 .chat {
+
   &__page {
     background-color: $color-dark;
     min-height: 100vh;
   }
+
+  &__header {
+    padding: 10px 0;
+    border-bottom: 1px solid #1F222910;
+
+    &-title {
+      text-align: center;
+    }
+  }
+
   &__area {
-    width: 1100px;
+    max-width: 1100px;
     min-height: 100vh;
     margin: 0 auto;
     background-color: $color-white;
@@ -28,8 +39,22 @@
   }
 }
 
+.message-helper {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top:1px solid #1F222910;
+
+  &__title {
+    text-align: center;
+    font-size: 20px;
+  }
+}
+
 .voice-helper {
   margin-top: 50px;
+  transition: 0.5s;
+  position: relative;
+  top:0;
 
   &__title {
     font-size: 20px;
@@ -63,21 +88,36 @@
 
       &_pink {
         background-color: $color-pink;
-        border-radius: 50% / 70px 108px 105px;
+        border-radius: 50% / 60% 30% 50% 25%;
         animation-delay: 0.2s;
       }
 
       &_pink-dark {
         background-color: $color-pink-dark;
-        border-radius: 50% / 70px 108px 105px;
+        border-radius: 50% / 60% 30% 50% 25%;
         animation-delay: 4.4s;
       }
 
       &_blue {
         background-color: $color-blue;
-        border-radius: 50% / 70px 108px 105px;
+        border-radius: 50% / 60% 30% 50% 25%;
         animation-delay: 2.6s;
       }
     }
   }
+
+  &_active {
+    top: 390px;
+
+    .voice-helper__radiance {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.message-block {
+  padding: 20px;
+  border:1px solid red;
+  border-right: 20px;
 }

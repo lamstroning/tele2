@@ -1,0 +1,29 @@
+.button {
+  cursor: pointer;
+  border: 1px solid #FF59A3;
+  display: inline-block;
+  transition: 0.2s;
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: $color-pink;
+    color: white;
+  }
+
+  &_cetner {
+    margin: 0 auto;
+  }
+  &_border-radius {
+    border-radius: 20px;
+  }
+
+  &_fill-background {
+    &-red {
+      background-color: $color-red;
+    }
+    &-red {
+      background-color: $color-dark;
+      color: white;
+    }
+  }
+}
