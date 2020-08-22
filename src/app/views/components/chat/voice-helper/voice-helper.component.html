@@ -1,0 +1,13 @@
+<div class="voice-helper">
+  <app-notification *ngIf="error" [title]="error" [type]="'error'">
+  </app-notification>
+  <div class="voice-helper__title">Привет, я голосовй помощник Tele2</div>
+  <div class="voice-helper__radiance row row_center" (click)="startRecord()">
+    <div *ngIf="!voice" class="icon icon_microphone icon_responce-size-half"></div>
+    <div *ngIf="voice" class="icon icon_stop icon_responce-size-half"></div>
+    <div *ngIf="voice" class="voice-helper__radiance-shine voice-helper__radiance-shine_pink"></div>
+    <div *ngIf="voice" class="voice-helper__radiance-shine voice-helper__radiance-shine_pink-dark"></div>
+    <div *ngIf="voice" class="voice-helper__radiance-shine voice-helper__radiance-shine_blue"></div>
+  </div>
+  <div class="voice-helper__hint">Я вас внимательно слушаю</div>
+</div>
