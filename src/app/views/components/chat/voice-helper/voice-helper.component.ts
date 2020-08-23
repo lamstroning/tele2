@@ -11,6 +11,7 @@ export class VoiceHelperComponent implements OnInit {
 
   error: string;
   voice = false;
+  records;
   audioContext = new AudioContext();
   src: MediaStreamAudioSourceNode;
   analyser: AnalyserNode;

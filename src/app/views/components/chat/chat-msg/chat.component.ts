@@ -23,6 +23,7 @@ export class ChatComponent implements OnInit {
     this.response = stageBlocksResponse[this.stageCount];
     this.request = stageBlocksRequest[this.stageCount++].textBlock;
   }
+
   ngOnInit(): void {
     this.nextStage();
   }
