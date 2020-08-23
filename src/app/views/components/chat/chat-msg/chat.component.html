@@ -3,7 +3,7 @@
     <h1 class="chat__header-title">Помощник Теле2</h1>
   </div>
   <div сlass="row row_center">
-    <app-voice-helper [small]="voiceSmallIcon" (openChat)="openChat($event)"></app-voice-helper>
+    <app-voice-helper [small]="voiceSmallIcon" (answer)="readAnswer($event)"></app-voice-helper>
   </div>
   <div class="chat chat__messages" #scrollZone>
     <app-send-msg *ngFor="let msg of sendMsgList" [msg]="msg"></app-send-msg>
@@ -11,7 +11,7 @@
   </div>
   <div class="chat-interface">
     <div>
-      <div class="row row_center">
+      <div class="row row_center row_wrap">
         <div *ngFor="let text of request" class="col">
           <app-message-block [text]="text" (click)="sendMsg(text)"></app-message-block>
         </div>

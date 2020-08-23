@@ -111,7 +111,7 @@
   &_small {
     position: absolute;
     bottom: 15px;
-    right: 40px;
+    right: 10px;
 
     .voice-helper__radiance {
       width: 50px;
@@ -123,6 +123,7 @@
 
 .message-block {
   padding: 10px 20px;
+  font-size: 25px;
   border: 1px solid $color-blue;
   border-radius: 20px;
   margin-bottom: 20px;

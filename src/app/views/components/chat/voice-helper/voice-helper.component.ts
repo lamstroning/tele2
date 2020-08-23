@@ -8,7 +8,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class VoiceHelperComponent implements OnInit {
   @Input() small: boolean;
-
+  @Output() answer = new EventEmitter();
   error: string;
   voice = false;
   mediaRecorder: MediaRecorder;
@@ -32,6 +32,7 @@ export class VoiceHelperComponent implements OnInit {
       this.mediaRecorder.start();
       this.mediaRecorder.addEventListener('dataavailable', (event) => {
         records.push(event.data);
+
       });
       this.mediaRecorder.addEventListener('stop', () => {
         const voiceBlob = new Blob(records, {
@@ -39,8 +40,10 @@ export class VoiceHelperComponent implements OnInit {
         });
         const fd = new FormData();
         fd.append('file', voiceBlob, 'name');
-        this.http.post('http://194.67.113.101:5000', fd).subscribe(
-          res => console.log(res),
+        this.http.post('http://194.67.113.101:5000', fd,  { responseType: 'text'}).subscribe(
+          res => {
+            this.answer.emit(res);
+          },
           err => console.warn(err)
         );
       });

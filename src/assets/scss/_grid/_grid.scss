@@ -7,6 +7,11 @@
     justify-content: center;
     align-items: center;
   }
+
+  &_wrap {
+    flex-wrap: wrap;
+  }
+
   &_scrolled {
     overflow-x: auto;
   }
