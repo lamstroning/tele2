@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 
 @Component({
@@ -6,43 +7,46 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   templateUrl: './voice-helper.component.html'
 })
 export class VoiceHelperComponent implements OnInit {
-  @Output() openChat = new EventEmitter();
   @Input() small: boolean;
 
   error: string;
   voice = false;
-  records;
-  audioContext = new AudioContext();
-  src: MediaStreamAudioSourceNode;
-  analyser: AnalyserNode;
+  mediaRecorder: MediaRecorder;
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   startRecord() {
     this.error = '';
-    this.openChat.emit('voice');
     this.voice = !this.voice;
+
     if (!this.voice) {
+      this.mediaRecorder.stop();
       return;
     }
-    this.analyser = this.audioContext.createAnalyser();
+
     navigator.mediaDevices.getUserMedia({
       audio: true
     }).then(stream => {
-      this.src = this.audioContext.createMediaStreamSource(stream);
-      this.src.connect(this.analyser);
-    }).catch(() => {
-      this.error = 'Разрешите использование микрофона';
-      this.voice = false;
+      const records = [];
+      this.mediaRecorder = new MediaRecorder(stream);
+      this.mediaRecorder.start();
+      this.mediaRecorder.addEventListener('dataavailable', (event) => {
+        records.push(event.data);
+      });
+      this.mediaRecorder.addEventListener('stop', () => {
+        const voiceBlob = new Blob(records, {
+          type: 'audio/wav'
+        });
+        const fd = new FormData();
+        fd.append('file', voiceBlob, 'name');
+        this.http.post('http://194.67.113.101:5000', fd).subscribe(
+          res => console.log(res),
+          err => console.warn(err)
+        );
+      });
     });
-
   }
 
-  animation() {
-
-  }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }
 

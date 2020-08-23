@@ -11,6 +11,7 @@ import { MessageComponent } from './views/components/message/message.component';
 import { MessageBlockComponent } from './views/components/chat/message-block/message-block.component';
 import { SendMsgComponent } from './views/components/chat/send-msg/send-msg.component';
 import { ShowTariffsComponent } from './views/components/chat/show-tariffs/show-tariffs.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ShowTariffsComponent } from './views/components/chat/show-tariffs/show-
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
